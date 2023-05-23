@@ -28,14 +28,14 @@ class App():
         self.w32.SetDefaultPrinter(impressora)
         
         # Imprimir Titulo
-        #nome_empresa = str("RCHLO")
-        #self.w32.WritePrinter(impressora, nome_empresa)
-        #self.w32.WritePrinter(self.w32.GetDefaultPrinter(), b'\n')
+        nome_empresa = str("RCHLO")
+        self.w32.WritePrinter(impressora, nome_empresa)
+        self.w32.WritePrinter(self.w32.GetDefaultPrinter(), b'\n')
 
         # Imprimir mensagem
-        #mensagem = "Cumpom não fiscal!"
-        #self.w32.WritePrinter(self.w32.GetDefaultPrinter(), mensagem.encode('utf-8'))
-        #self.w32.WritePrinter(self.w32.GetDefaultPrinter(), b'\n\n')
+        mensagem = "Cumpom não fiscal!"
+        self.w32.WritePrinter(self.w32.GetDefaultPrinter(), mensagem.encode('utf-8'))
+        self.w32.WritePrinter(self.w32.GetDefaultPrinter(), b'\n\n')
         
         # Finalização
         with open(f'{self.nome_arquivo}.png', 'rb') as f:

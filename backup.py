@@ -2,7 +2,6 @@ import barcode
 from barcode.writer import ImageWriter
 import win32print
 from PIL import Image
-import os
 
 def imprimir_ticket(codigo):
     # Gerar código de barras
