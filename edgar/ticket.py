@@ -2,18 +2,20 @@ from barcode import EAN13
 from barcode.writer import ImageWriter
 from win32printing import win32print
 from os import remove
+from sys import exit
 
 class App():
     def __init__(self):            
         self.nome_arquivo = 'temp_code'
         self.w32 = win32print
         while True:
-            # try:
-            self.codigo = input("Bipe o código de barras do produto (ou 'sair' para encerrar): ")
-            self.gerar_cod()
-                # break
-            # except:
-                # print('Valor incorreto, Digite novamente!')   
+            try:
+                self.codigo = input("Bipe o código de barras do produto (ou 'sair' para encerrar): ")
+                self.gerar_cod()
+                break
+            except:
+                if self.codigo.lower() == 'sair':exit()
+                print('Valor incorreto, Digite novamente!')   
     
     def gerar_cod(self):
         self.codigo_de_barras = EAN13(str(self.codigo), writer=ImageWriter())
@@ -28,7 +30,8 @@ class App():
         win32print.EndDocPrinter(prt)
         win32print.ClosePrinter(prt)
         
-        remove(f'{self.nome_arquivo}.png')
         print('Imprimindo...')
-        
-App()   
+        remove(f'{self.nome_arquivo}.png')
+
+
+App()
