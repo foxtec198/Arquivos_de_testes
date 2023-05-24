@@ -38,7 +38,11 @@ def cons(*dados_cons):
         print('Funcionario não encontrado!')
 
 while True:
-    ent = input('Digite o id: ')
-    if ent.lower() == 'sair' : break
-    cons(ent)
+    ent = input('Digite o id ou a função: ')
+    if ent.lower() == 'sair':
+        break
+    elif ent.lower() == 'add':
+        inserir(input('Nome:'),input('CPF:'),input('Data de nascimento: '))
+    else:
+        cons(ent)
    
