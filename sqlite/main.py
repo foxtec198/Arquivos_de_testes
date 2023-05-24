@@ -12,3 +12,12 @@ c.execute('''
               dn TEXT
           )
           ''')
+
+def inserir(*dado):
+    c.execute(f'''
+            INSERT INTO dados(nome, cpf, dn)
+            VALUES ('{dado[0]}','{dado[1]}','{dado[2]}')
+            ''')
+    print(f'{dado[0]} Inserido no banco de dados')
+    
+# inserir('GUILHERME', '12345678910', '24/05/2023')
