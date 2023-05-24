@@ -32,5 +32,5 @@ class App():
         print('Imprimindo...')
         remove(f'{self.nome_arquivo}.png')
 
-
-App()
+while True:
+    App()
