@@ -40,6 +40,7 @@ def cons(*dados_cons):
 while True:
     ent = input('Digite o id ou a função: ')
     if ent.lower() == 'sair':
+        print('Até mais :)')
         break
     elif ent.lower() == 'add':
         inserir(input('Nome:'),input('CPF:'),input('Data de nascimento: '))
