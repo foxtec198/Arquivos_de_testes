@@ -10,7 +10,6 @@ class App():
         while True:
             try:
                 self.gerar_cod()
-                break
             except:
                 if self.codigo.lower() == 'sair':exit()
                 print('Valor incorreto, Digite novamente!')   
@@ -32,5 +31,4 @@ class App():
         print('Imprimindo...')
         remove(f'{self.nome_arquivo}.png')
 
-while True:
-    App()
+App()
