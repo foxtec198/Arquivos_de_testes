@@ -5,14 +5,14 @@ from os import remove
 from sys import exit
 
 class App():
-    def __init__(self):            
-        self.nome_arquivo = 'temp_code'
+    def __init__(self):
+        self.nome_arquivo = 'temp_code.png'
         while True:
-            try:
-                self.gerar_cod()
-            except:
-                if self.codigo.lower() == 'sair':exit()
-                print('Valor incorreto, Digite novamente!')   
+            # try:
+            self.gerar_cod()
+            # except:
+                # if self.codigo.lower() == 'sair':exit()
+                # print('Valor incorreto, Digite novamente!')   
    
     def gerar_cod(self):
         self.codigo = input("Bipe o código de barras do produto (ou 'sair' para encerrar): ")
@@ -24,11 +24,8 @@ class App():
         impressora_definida = win32print.GetDefaultPrinter()# Definido imp padrão
         impressora = win32print.OpenPrinter(impressora_definida)# Inicializando a impressora
         win32print.StartDocPrinter(impressora, 1, (f'{self.nome_arquivo}.png', None, None))# Definindo o arquivo
-        # Finalizando impressora
         win32print.EndDocPrinter(impressora)
         win32print.ClosePrinter(impressora)
-        
         print('Imprimindo...')
-        remove(f'{self.nome_arquivo}.png')
 
 App()
