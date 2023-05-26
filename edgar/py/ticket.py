@@ -37,5 +37,4 @@ class App():
         # remove(f"{self.nome_arquivo}.png")
         print('Imprimindo...')
 
-
 App()
