@@ -34,7 +34,7 @@ class App():
         win32print.EndDocPrinter(impressora)
         win32print.ClosePrinter(impressora)
         remove(f"{self.nome_arquivo}.svg")
-        # remove(f"{self.nome_arquivo}.png")
+        remove(f"{self.nome_arquivo}.png")
         print('Imprimindo...')
 
 App()
